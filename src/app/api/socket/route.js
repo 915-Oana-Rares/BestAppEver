@@ -51,7 +51,7 @@ if (typeof global.io === 'undefined') {
     // }
 
     // Start the server on the specified port
-    io.listen(3001);
+    //io.listen(3001);
     console.log('Socket.IO server started on port 3001');
 }
 
