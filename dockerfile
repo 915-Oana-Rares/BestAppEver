@@ -12,6 +12,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # Generate Prisma client with correct binary targets
+ENV DATABASE_URL=${DATABASE_URL}
 RUN npx prisma generate
 RUN npm run build
 
@@ -26,6 +27,7 @@ COPY --from=builder /app/.next/static ./.next/static
 # Add these lines to copy Prisma files
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/src/generated/prisma ./src/generated/prisma
+
 
 EXPOSE 3000
 CMD ["node", "server.js"]
