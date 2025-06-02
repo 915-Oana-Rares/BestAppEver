@@ -1,0 +1,88 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+/public/videos
+/public/fonts/Inter/static/Inter_18pt-Italic.ttf
+/public/fonts/Inter/static/Inter_18pt-Light.ttf
+/public/fonts/Inter/static/Inter_18pt-LightItalic.ttf
+/public/fonts/Inter/static/Inter_18pt-Medium.ttf
+/public/fonts/Inter/static/Inter_18pt-MediumItalic.ttf
+/public/fonts/Inter/static/Inter_18pt-Regular.ttf
+/public/fonts/Inter/static/Inter_18pt-SemiBold.ttf
+/public/fonts/Inter/static/Inter_18pt-SemiBoldItalic.ttf
+/public/fonts/Inter/static/Inter_18pt-Thin.ttf
+/public/fonts/Inter/static/Inter_18pt-ThinItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-Black.ttf
+/public/fonts/Inter/static/Inter_24pt-BlackItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-Bold.ttf
+/public/fonts/Inter/static/Inter_24pt-BoldItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-ExtraBold.ttf
+/public/fonts/Inter/static/Inter_24pt-ExtraBoldItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-ExtraLight.ttf
+/public/fonts/Inter/static/Inter_24pt-ExtraLightItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-Italic.ttf
+/public/fonts/Inter/static/Inter_24pt-Light.ttf
+/public/fonts/Inter/static/Inter_24pt-LightItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-Medium.ttf
+/public/fonts/Inter/static/Inter_24pt-MediumItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-Regular.ttf
+/public/fonts/Inter/static/Inter_24pt-SemiBold.ttf
+/public/fonts/Inter/static/Inter_24pt-SemiBoldItalic.ttf
+/public/fonts/Inter/static/Inter_24pt-Thin.ttf
+/public/fonts/Inter/static/Inter_24pt-ThinItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-Black.ttf
+/public/fonts/Inter/static/Inter_28pt-BlackItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-Bold.ttf
+/public/fonts/Inter/static/Inter_28pt-BoldItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-ExtraBold.ttf
+/public/fonts/Inter/static/Inter_28pt-ExtraBoldItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-ExtraLight.ttf
+/public/fonts/Inter/static/Inter_28pt-ExtraLightItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-Italic.ttf
+/public/fonts/Inter/static/Inter_28pt-Light.ttf
+/public/fonts/Inter/static/Inter_28pt-LightItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-Medium.ttf
+/public/fonts/Inter/static/Inter_28pt-MediumItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-Regular.ttf
+/public/fonts/Inter/static/Inter_28pt-SemiBold.ttf
+/public/fonts/Inter/static/Inter_28pt-SemiBoldItalic.ttf
+/public/fonts/Inter/static/Inter_28pt-Thin.ttf
+/public/fonts/Inter/static/Inter_28pt-ThinItalic.ttf
