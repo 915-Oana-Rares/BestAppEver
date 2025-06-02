@@ -11,7 +11,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Generate Prisma client with correct binary targets for Alpine
-RUN npx prisma generate --binary-targets=linux-musl
+RUN npx prisma generate
 RUN npm run build
 
 FROM base AS runner
