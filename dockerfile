@@ -16,7 +16,8 @@ ENV DATABASE_URL=$DATABASE_URL
 RUN npx prisma generate
 RUN npm run build
 
-RUN npx prisma migrate dev
+RUN npx prisma migrate deploy # Use 'deploy' for production migrations
+RUN node prisma/seed.js       # Seed the database after migrations
 
 FROM base AS runner
 WORKDIR /app

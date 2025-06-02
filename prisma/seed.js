@@ -3,13 +3,14 @@ const { PrismaClient } = require('../src/generated/prisma');
 const prisma = new PrismaClient();
 
 async function main() {
+    console.log("Starting database seeding...");
+
     const publisherList = ['DC', "Marvel", 'DarkHorse'];
 
     await prisma.userOperation.deleteMany({});
     await prisma.userComic.deleteMany({});
     await prisma.admin.deleteMany({});
     await prisma.suspiciousUser.deleteMany({});
-
     await prisma.user.deleteMany({});
     await prisma.comic.deleteMany({});
 
@@ -25,7 +26,7 @@ async function main() {
             const userId = i + 'X' + j;
 
             comicList.push({ name: comicName, publisher: publisher, writer: 'Bob Kane' });
-            userList.push({id: userId, name: userName, email: i + 'email' + j, password: "password" });
+            userList.push({ id: userId, name: userName, email: i + 'email' + j, password: "password" });
 
             userComicList.push({
                 userId: i + 'X0',
@@ -38,21 +39,23 @@ async function main() {
         await prisma.userComic.createMany({ data: userComicList });
 
         if (i % 20 === 0)
-            console.log(`Batch ${i+1}/100 completed`);
+            console.log(`Batch ${i + 1}/100 completed`);
     }
 
-    const firstUser = await prisma.user.findFirst()
+    const firstUser = await prisma.user.findFirst();
 
     await prisma.admin.create({
         data: {
-                userId: firstUser.id
+            userId: firstUser.id
         }
-    })
+    });
+
+    console.log("Database seeding completed.");
 }
 
 main()
     .catch(e => {
-        console.error(e);
+        console.error("Error during seeding:", e);
         process.exit(1);
     })
     .finally(async () => {
