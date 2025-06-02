@@ -78,57 +78,6 @@ const BestAppEver = () => {
     }
   };
 
-  const handleVideoDownload = async () => {
-    try {
-      // Check if online
-      if (!isOnline || !isServerAvailable) {
-        alert("Cannot download video while offline. Please connect to the internet and try again.");
-        return;
-      }
-
-      // Show loading indicator
-      const button = document.getElementById('download-video-btn');
-      const originalText = button.textContent;
-      button.textContent = 'Downloading...';
-      button.disabled = true;
-
-      // Fetch video from server
-      const response = await fetch('/api/video');
-
-      if (!response.ok) {
-        throw new Error('Failed to download video');
-      }
-
-      // Create a downloadable blob
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = 'comics-video.mp4';
-      document.body.appendChild(a);
-      a.click();
-
-      // Clean up
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-
-      // Reset button
-      button.textContent = originalText;
-      button.disabled = false;
-    } catch (err) {
-      console.error("Error downloading video:", err);
-      alert("Failed to download video. Please try again later.");
-
-      // Reset button on error
-      const button = document.getElementById('download-video-btn');
-      if (button) {
-        button.textContent = 'Download Video';
-        button.disabled = false;
-      }
-    }
-  };
-
 const renderSuspiciousList= () =>{
     if (user && user.isAdmin) {
       return <SuspiciousUsersList/>;
@@ -152,7 +101,6 @@ const renderSuspiciousList= () =>{
           <button
               id="download-video-btn"
               className={styles.downloadButton}
-              onClick={handleVideoDownload}
               disabled={!isOnline || !isServerAvailable}
           >
             Download Surprise Video
