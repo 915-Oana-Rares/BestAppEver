@@ -1,6 +1,9 @@
 // src/app/api/admin/suspicious-users/route.js
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
+import { startServerLogger } from '@/server-logger'
+
+startServerLogger();
 
 export async function GET(request) {
     try {
