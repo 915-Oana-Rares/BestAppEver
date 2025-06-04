@@ -24,7 +24,7 @@ export const ComicsProvider = ({ children }) => {
         // Only connect on client-side
         if (typeof window !== 'undefined') {
             // Connect to WebSocket server
-            socketRef.current = io('http://localhost:3001');
+            // socketRef.current = io('http://localhost:3001');
 
             // Listen for new comics
             socketRef.current.on('newComic', (newComic) => {
